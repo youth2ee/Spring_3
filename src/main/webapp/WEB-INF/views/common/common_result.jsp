@@ -12,8 +12,7 @@
 
 <script type="text/javascript">
  	alert("${msg}");
- 	location.href="./noticeList"
-		
+ 	location.href="${path}";
 </script>
 
 </body>

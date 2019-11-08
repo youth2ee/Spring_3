@@ -95,22 +95,22 @@
 
 				<tbody>
 					<tr class="b3">
-						<td>${requestScope.dto.num}</td>
-						<td class="b4">${requestScope.dto.title}</td>
-						<td>${requestScope.dto.writer}</td>
-						<td>${requestScope.dto.reg_date}</td>
-						<td>${requestScope.dto.hit}</td>
+						<td>${dto.num}</td>
+						<td class="b4">${dto.title}</td>
+						<td>${dto.writer}</td>
+						<td>${dto.reg_date}</td>
+						<td>${dto.hit}</td>
 					</tr>
 
 					<tr class="b3">
 						<td class="b5" colspan="5"
-							style="text-align: left; vertical-align: top; padding: 25px; height: 650px;">${requestScope.dto.contents}</td>
+							style="text-align: left; vertical-align: top; padding: 25px; height: 650px;">${dto.contents}</td>
 					</tr>
 				</tbody>
 			</table>
 
-			<a href="./noticeUpdate?num=${requestScope.dto.num}">UPDATE</a>
-			<a href="./noticeDelete?num=${requestScope.dto.num}">DELETE</a>
+			<a href="./noticeUpdate?num=${dto.num}">UPDATE</a>
+			<a href="./noticeDelete?num=${dto.num}">DELETE</a>
 
 		</div>
 	</section>

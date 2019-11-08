@@ -52,6 +52,7 @@ public class NoticeController {
 		}
 		
 		mv.addObject("msg", msg);
+		mv.addObject("path", "./noticeList");
 		mv.setViewName("common/common_result");
 		
 		return mv;
@@ -67,6 +68,7 @@ public class NoticeController {
 		}
 		
 		mv.addObject("msg", msg);
+		mv.addObject("path", "./noticeList");
 		mv.setViewName("common/common_result");
 		
 		return mv;
@@ -91,6 +93,7 @@ public class NoticeController {
 		}
 	
 		mv.addObject("msg", msg);
+		mv.addObject("path", "./noticeList");
 		mv.setViewName("common/common_result");
 	
 		return mv;

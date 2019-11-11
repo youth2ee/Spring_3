@@ -99,9 +99,18 @@
 					</c:forEach>
 				</tbody>
 			</table>
-			
-				<a href="./noticeWrite">Go notice write</a><br>
+
+			<div style="width: 100%; margin: 0 auto; text-align: center; padding-top: 10px;">
+				<ul class="pagination" style="margin: 0 auto; text-align: center;">
+					<c:forEach begin="1" end="${totalPage}" step="1" var="i">
+    				<li style="margin: 0 auto;"><a href="./noticeList?curPage=${i}">${i}</a></li>
+					</c:forEach>
+				</ul>
+			</div>
+
+			<a href="./noticeWrite">Go notice write</a><br>
 		</div>
+		
 	</section>
 	
 	<img alt="" src="../resources/images/cha2.jpg">

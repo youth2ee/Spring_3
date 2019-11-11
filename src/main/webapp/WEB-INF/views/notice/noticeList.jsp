@@ -102,9 +102,19 @@
 
 			<div style="width: 100%; margin: 0 auto; text-align: center; padding-top: 10px;">
 				<ul class="pagination" style="margin: 0 auto; text-align: center;">
-					<c:forEach begin="1" end="${totalPage}" step="1" var="i">
+					
+					<c:if test="${pager.curBlock gt 1}">
+					<li style="margin: 0 auto;"><a href="./noticeList?curPage=${pager.startNum - 1}">이전</a></li>
+					</c:if>
+					
+					<c:forEach begin="${pager.startNum}" end="${pager.lastNum}" step="1" var="i">
     				<li style="margin: 0 auto;"><a href="./noticeList?curPage=${i}">${i}</a></li>
 					</c:forEach>
+					
+					<c:if test="${pager.curBlock lt pager.totalBlock }">
+					<li style="margin: 0 auto;"><a href="./noticeList?curPage=${pager.lastNum + 1}">다음</a></li>
+					</c:if>
+					
 				</ul>
 			</div>
 

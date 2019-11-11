@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.naver.s3.model.board.NoticeVO;
 import com.naver.s3.service.board.NoticeService;
+import com.naver.s3.util.Pager;
 
 @Controller
 @RequestMapping("/notice/**")
@@ -25,16 +26,10 @@ public class NoticeController {
 	private NoticeService noticeService;
 
 	@RequestMapping(value = "noticeList", method = RequestMethod.GET)
-	public Model noticeList(Model model, @RequestParam(required = false ,defaultValue = "1") int curPage) throws Exception {
-		Map<String, Object> map = noticeService.noticeList(curPage);
-		
-		List<NoticeVO> ar = (List<NoticeVO>)map.get("list");
-		int totalPage = (Integer)map.get("totalPage");
-
-		model.addAttribute("list", ar);
-		model.addAttribute("totalPage", totalPage);
-		
-		return model;
+	public void noticeList(Model model, Pager pager) throws Exception {
+		List<NoticeVO> ar = noticeService.noticeList(pager);
+		model.addAttribute("list",ar);
+		model.addAttribute("pager", pager);
 	}
 	
 	

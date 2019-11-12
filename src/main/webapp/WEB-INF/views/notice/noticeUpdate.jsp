@@ -19,12 +19,12 @@
 		
 				<div class="form-group">
 					<label for="title">Title:</label> 
-					<input type="text" name="title" class="form-control" id="title" placeholder="Enter title">
+					<input type="text" name="title" class="form-control" id="title" placeholder="Enter title" value="${dto.title}">
 				</div>
 
 				<div class="form-group">
 					<label for="contents">Contents:</label>
-					<textarea rows="20" cols="" name="contents" class="form-control" id="contents" placeholder="Enter contents"></textarea>
+					<textarea rows="20" cols="" name="contents" class="form-control" id="contents" placeholder="Enter contents">${dto.contents}</textarea>
 				</div>
 
 				<button>Update</button>

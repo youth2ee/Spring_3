@@ -121,11 +121,11 @@
 				<ul class="pagination" style="margin: 0 auto; text-align: center;">
 					
 					<c:if test="${pager.curBlock gt 1}">
-						<li><span id=${pager.startNum - 1} class="List">이전</span></li>
+						<li><span id=${pager.startNum - 1} class="list">이전</span></li>
 					</c:if>
 					
 					<c:forEach begin="${pager.startNum}" end="${pager.lastNum}" step="1" var="i">
-					<li><span id="${i}" class="list">${i}</span></li>
+						<li><span id="${i}" class="list">${i}</span></li>
 					</c:forEach>
 
 					<c:if test="${pager.curBlock lt pager.totalBlock}">
@@ -145,8 +145,8 @@
 		var kind = '${pager.kind}';
 		if (kind == '') {
 			kind = "kT";
-			
 		}
+		
 		$("#"+kind).prop("selected", true);
 	
 		$(".list").click(function() {

@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import com.naver.s3.TestAbstractCase;
 import com.naver.s3.model.board.NoticeVO;
+import com.naver.s3.util.Pager;
 
 public class NoticeDAOTest extends TestAbstractCase {
 	
@@ -58,8 +59,8 @@ public class NoticeDAOTest extends TestAbstractCase {
 	}
 	
 	@Test
-	public void noticeCount() throws Exception {
-		int count = noticeDAO.noticeCount();
+	public void noticeCount(Pager pager) throws Exception {
+		int count = noticeDAO.noticeCount(pager);
 		
 		assertEquals(110, count);
 	}

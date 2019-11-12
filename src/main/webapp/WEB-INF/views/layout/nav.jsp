@@ -20,7 +20,7 @@
 						href="${pageContext.request.contextPath}/notice/noticeWrite">Write</a></li>
 				</ul></li>
 
-			<li><a href="#">Page 2</a></li>
+			<li><a href="${pageContext.request.contextPath}/qna/qnaList">QNA</a></li>
 		</ul>
 
 		<ul class="nav navbar-nav navbar-right">

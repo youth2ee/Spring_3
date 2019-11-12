@@ -45,8 +45,8 @@ public class NoticeDAO {
 	}
 	
 	
-	public int noticeCount() throws Exception {
-		return sqlSession.selectOne(NAMESPACE+"noticeCount");
+	public int noticeCount(Pager pager) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"noticeCount", pager);
 	}
 	
 	

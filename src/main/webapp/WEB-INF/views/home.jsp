@@ -3,10 +3,17 @@
 <html>
 <head>
 	<title>Home</title>
+<<<<<<< HEAD
 <c:import url="./layout/bootStrap.jsp" />
 </head>
 <body>
 <c:import url="./layout/nav.jsp" />
+=======
+	<c:import url="./layout/bootStrap.jsp" />
+</head>
+<body>
+	<c:import url="./layout/nav.jsp" />
+>>>>>>> Add_QnA_2
 <h1>
 	Hello world!  
 </h1>

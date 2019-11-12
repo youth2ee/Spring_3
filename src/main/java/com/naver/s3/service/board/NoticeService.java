@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.naver.s3.dao.board.NoticeDAO;
 import com.naver.s3.model.board.NoticeVO;
 import com.naver.s3.util.Pager;
-import com.naver.s3.util.RowMaker;
 
 @Service
 public class NoticeService {
@@ -21,10 +20,10 @@ public class NoticeService {
 	private NoticeDAO noticeDAO;
 	
 	public List<NoticeVO> noticeList(Pager pager) throws Exception {
-		RowMaker rowMaker = pager.makeRow();
+		pager.makeRow();
 		pager.makePager(noticeDAO.noticeCount());
 		
-		return noticeDAO.noticeList(rowMaker);
+		return noticeDAO.noticeList(pager);
 	}
 	
 	public NoticeVO noticeSelect(int num) throws Exception {

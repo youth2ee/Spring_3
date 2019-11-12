@@ -74,7 +74,7 @@
 		<div class="div_t">
 
 		<div>
-			<form action="./qnaList" id="frm">
+			<form action="./noticeList" id="frm">
 				<input type="hidden" value="1" name="curPage" id="curPage">
 			
 				<select name="kind">				
@@ -153,9 +153,7 @@
 			$("#curPage").val($(this).attr("id"));
 			$("#frm").submit();
 		});
-	
-		
-		
+
 	</script>
 
 </body>

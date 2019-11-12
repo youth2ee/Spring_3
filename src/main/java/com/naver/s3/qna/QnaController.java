@@ -22,8 +22,6 @@ public class QnaController {
 		List<QnaVO> ar = qnaService.qnaList(pager);
 		model.addAttribute("list", ar);
 		model.addAttribute("pager", pager);
-		System.out.println(pager.getStartNum());
-		System.out.println(pager.getLastNum());
 
 	}
 	

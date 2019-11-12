@@ -16,6 +16,7 @@ public class QnaDAO {
 	private SqlSession sqlSession;
 	private static final String NAMESPACE = "qnaMapper.";
 	
+	
 	public List<QnaVO> qnaList(RowMaker rowMaker) throws Exception {
 		return sqlSession.selectList(NAMESPACE+"qnaList", rowMaker);
 	}

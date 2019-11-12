@@ -16,6 +16,7 @@ public class QnaService {
 	@Inject
 	private QnaDAO qnaDAO; 
 	
+	
 	public List<QnaVO> qnaList(Pager pager) throws Exception {
 		RowMaker rowMaker = pager.makeRow();
 		pager.makePager(qnaDAO.qnaCount());
@@ -23,6 +24,4 @@ public class QnaService {
 		return qnaDAO.qnaList(rowMaker);
 	}
 	
-
-
 }

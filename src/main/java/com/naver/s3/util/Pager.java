@@ -36,7 +36,6 @@ public class Pager {
 		}
 		return curPage;
 	}
-
 	public void setCurPage(Integer curPage) {
 		this.curPage = curPage;
 	}
@@ -63,6 +62,7 @@ public class Pager {
 		
 		startNum = (curBlock-1) * perBlock + 1;
 		lastNum = curBlock * perBlock;
+		
 		
 		if(curBlock == totalBlock) {
 			lastNum = totalPage;

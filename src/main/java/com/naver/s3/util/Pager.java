@@ -120,9 +120,7 @@ public class Pager {
 	
 	public void setTotalBlock(Integer totalBlock) {
 		this.totalBlock = totalBlock;
-	}
-
-	
+	}	
 
 	public void makeRow() {
 		this.startRow = (this.getCurPage()-1)*this.getPerPage() + 1;

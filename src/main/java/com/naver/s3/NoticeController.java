@@ -47,13 +47,13 @@ public class NoticeController {
 	}
 	
 	
-	@RequestMapping(value = "noticeWrite", method = RequestMethod.GET)
-	public void noticeWrite() throws Exception {
+	@RequestMapping(value = "noticeInsert", method = RequestMethod.GET)
+	public void noticeInsert() throws Exception {
 	}
 	
 	
-	@RequestMapping(value = "noticeWrite", method = RequestMethod.POST)
-	public ModelAndView noticeWrite(NoticeVO noticeVO) throws Exception {
+	@RequestMapping(value = "noticeInsert", method = RequestMethod.POST)
+	public ModelAndView noticeInsert(NoticeVO noticeVO) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		int result = noticeService.noticeInsert(noticeVO);
 		String msg = "작성 실패";
@@ -86,7 +86,7 @@ public class NoticeController {
 	}
 	
 	@RequestMapping(value = "noticeUpdate", method = RequestMethod.GET)
-	public Model noticeUpdate (int num, Model model ) throws Exception {
+	public Model noticeUpdate (int num, Model model) throws Exception {
 		NoticeVO noticeVO = noticeService.noticeSelect(num);
 		model.addAttribute("dto", noticeVO);
 		return model;

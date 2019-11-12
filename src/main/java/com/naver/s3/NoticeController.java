@@ -47,12 +47,12 @@ public class NoticeController {
 	}
 	
 	
-	@RequestMapping(value = "noticeInsert", method = RequestMethod.GET)
+	@RequestMapping(value = "noticeWrite", method = RequestMethod.GET)
 	public void noticeInsert() throws Exception {
 	}
 	
 	
-	@RequestMapping(value = "noticeInsert", method = RequestMethod.POST)
+	@RequestMapping(value = "noticeWrite", method = RequestMethod.POST)
 	public ModelAndView noticeInsert(NoticeVO noticeVO) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		int result = noticeService.noticeInsert(noticeVO);

@@ -135,7 +135,7 @@
 				</ul>
 			</div>
 
-			<a href="./noticeWrite">Go notice write</a><br>
+			<a href="noticeWrite">Go notice write</a><br>
 		</div>
 		
 	</section>

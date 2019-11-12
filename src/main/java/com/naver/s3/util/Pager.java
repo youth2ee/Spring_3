@@ -1,6 +1,38 @@
 package com.naver.s3.util;
 
 public class Pager {
+<<<<<<< Updated upstream
+=======
+	
+	//DB
+	private Integer curPage; //현재 페이지 번호
+	private Integer perPage; //페이지 당 글의 개수
+	
+	private Integer startRow; //페이지의 시작 글 번호
+	private Integer lastRow; //페이지의 마지막 글 번호
+	
+	
+	//View (JSP)
+	private Integer startNum; //블럭 시작번호
+	private Integer lastNum; //블럭 마지막 번호
+	
+	private Integer curBlock; //현재 블럭번호
+	private Integer totalBlock; //전체 블럭 개수
+	
+	
+	///// 검색하기
+	private String kind; //검색종류
+	private String search; //검색어
+
+	
+	/////
+	public Integer getCurPage() {
+		if(curPage == null || curPage == 0) {
+			curPage = 1;
+		}
+		return curPage;
+	}
+>>>>>>> Stashed changes
 
 	private Integer curPage;
 	private Integer perPage;
@@ -13,15 +45,33 @@ public class Pager {
 		perPage = 10;
 	}
 	
+<<<<<<< Updated upstream
 	
 	public Integer getTotalBlock() {
 		return totalBlock;
+=======
+	/////
+	public Integer getStartRow() {
+		return startRow;
+	}
+
+	public void setStartRow(Integer startRow) {
+		this.startRow = startRow;
+	}
+
+	public Integer getLastRow() {
+		return lastRow;
+>>>>>>> Stashed changes
 	}
 
 	public Integer getCurBlock() {
 		return curBlock;
 	}
 
+<<<<<<< Updated upstream
+=======
+	/////
+>>>>>>> Stashed changes
 	public Integer getStartNum() {
 		return startNum;
 	}
@@ -38,9 +88,41 @@ public class Pager {
 		
 		return curPage;
 	}
+<<<<<<< Updated upstream
 
 	public void setCurPage(Integer curPage) {
 		this.curPage = curPage;
+=======
+	
+	///// 검색
+	public String getKind() {
+		return kind;
+	}
+
+	public void setKind(String kind) {
+		this.kind = kind;
+	}
+
+	public String getSearch() {
+		if(search == null) {
+			search = "";
+		}
+		
+		return search;
+	}
+
+	public void setSearch(String search) {
+		this.search = search;
+	}
+	
+	/////
+	
+	
+	
+	public void makeRow() {
+		this.startRow = (this.getCurPage()-1)*this.getPerPage() + 1;
+		this.lastRow = this.getCurPage() * this.getPerPage();
+>>>>>>> Stashed changes
 	}
 	
 	public void makePager(int totalCount) {

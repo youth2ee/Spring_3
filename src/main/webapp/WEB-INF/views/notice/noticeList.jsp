@@ -72,6 +72,26 @@
 
 	<section style="background-color: rgb(240, 240, 240); height: auto; padding-bottom: 20px;">
 		<div class="div_t">
+<<<<<<< Updated upstream:src/main/webapp/WEB-INF/views/notice/noticeList.jsp
+=======
+		
+		<div>
+			<form action="./qnaList" id="frm">
+				<input type="hidden" value="1" name="curPage" id="curPage">
+			
+				<select name="kind">				
+					<option id="kT" value="kT">제목</option>
+					<option id="kW"  value="kW">작성자</option>
+					<option id="kC" value="kC">내용</option>
+				</select>
+			
+				<input type="text" name="search" value="${pager.search}">
+				
+				<button>검색</button>
+			</form>
+		</div>
+
+>>>>>>> Stashed changes:src/main/webapp/WEB-INF/views/qna/qnaList.jsp
 			<table class="t">
 				<thead>
 					<tr class="notice">
@@ -104,15 +124,30 @@
 				<ul class="pagination" style="margin: 0 auto; text-align: center;">
 					
 					<c:if test="${pager.curBlock gt 1}">
+<<<<<<< Updated upstream:src/main/webapp/WEB-INF/views/notice/noticeList.jsp
 					<li style="margin: 0 auto;"><a href="./noticeList?curPage=${pager.startNum - 1}">이전</a></li>
+=======
+						<%-- <li><a href="./qnaList?curPage=${pager.startNum - 1}">이전</a></li> --%>
+						<li><span id=${pager.startNum - 1} class="List">이전</span></li>
+>>>>>>> Stashed changes:src/main/webapp/WEB-INF/views/qna/qnaList.jsp
 					</c:if>
 					
 					<c:forEach begin="${pager.startNum}" end="${pager.lastNum}" step="1" var="i">
+<<<<<<< Updated upstream:src/main/webapp/WEB-INF/views/notice/noticeList.jsp
     				<li style="margin: 0 auto;"><a href="./noticeList?curPage=${i}">${i}</a></li>
 					</c:forEach>
 					
 					<c:if test="${pager.curBlock lt pager.totalBlock }">
 					<li style="margin: 0 auto;"><a href="./noticeList?curPage=${pager.lastNum + 1}">다음</a></li>
+=======
+						<%-- <li><a href="./qnaList?curPage=${i}&kind=${pager.kind}&search=${pager.search}">${i}</a></li> --%>
+						<li><span id="${i}" class="list">${i}</span></li>
+					</c:forEach>
+
+					<c:if test="${pager.curBlock lt pager.totalBlock}">
+						<%-- <li><a href="./qnaList?curPage=${pager.lastNum + 1}">다음</a></li> --%>
+						<li><span id="${pager.lastNum + 1}" class="list">다음</span></li>
+>>>>>>> Stashed changes:src/main/webapp/WEB-INF/views/qna/qnaList.jsp
 					</c:if>
 					
 				</ul>
@@ -123,8 +158,27 @@
 		
 	</section>
 	
+<<<<<<< Updated upstream:src/main/webapp/WEB-INF/views/notice/noticeList.jsp
 	<img alt="" src="../resources/images/cha2.jpg">
 	
+=======
+	<script type="text/javascript">
+		var kind = '${pager.kind}';
+		if (kind == '') {
+			kind = "kT";
+			
+		}
+		$("#"+kind).prop("selected", true);
+	
+		$(".list").click(function() {
+			$("#curPage").val($(this).attr("id"));
+			$("#frm").submit();
+		});
+	
+		
+		
+	</script>
+>>>>>>> Stashed changes:src/main/webapp/WEB-INF/views/qna/qnaList.jsp
 
 </body>
 </html>

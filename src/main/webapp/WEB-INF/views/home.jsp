@@ -5,12 +5,16 @@
 <html>
 <head>
 	<title>Home</title>
-	<c:import url="./layout/nav.jsp" />
+
+	<c:import url="./layout/bootStrap.jsp" />
 
 </head>
 
+
 <body>
-<c:import url="./layout/nav.jsp"></c:import>
+
+	<c:import url="./layout/nav.jsp" />
+
 
 <h1>
 	Hello world!  

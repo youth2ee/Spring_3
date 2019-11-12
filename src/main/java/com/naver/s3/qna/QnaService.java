@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.naver.s3.dao.board.NoticeDAO;
 import com.naver.s3.util.Pager;
-import com.naver.s3.util.RowMaker;
 
 @Service
 public class QnaService {
@@ -18,10 +17,9 @@ public class QnaService {
 	
 	
 	public List<QnaVO> qnaList(Pager pager) throws Exception {
-		RowMaker rowMaker = pager.makeRow();
-		pager.makePager(qnaDAO.qnaCount());
-		
-		return qnaDAO.qnaList(rowMaker);
+		pager.makeRow();
+		pager.makePager(qnaDAO.qnaCount(pager));
+		return qnaDAO.qnaList(pager);
 	}
 	
 }

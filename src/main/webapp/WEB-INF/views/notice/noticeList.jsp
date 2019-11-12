@@ -72,6 +72,23 @@
 
 	<section style="background-color: rgb(240, 240, 240); height: auto; padding-bottom: 20px;">
 		<div class="div_t">
+
+		<div>
+			<form action="./noticeList" id="frm">
+				<input type="hidden" value="1" name="curPage" id="curPage">
+			
+				<select name="kind">				
+					<option id="kT" value="kT">제목</option>
+					<option id="kW"  value="kW">작성자</option>
+					<option id="kC" value="kC">내용</option>
+				</select>
+			
+				<input type="text" name="search" value="${pager.search}">
+				
+				<button>검색</button>
+			</form>
+		</div>
+
 			<table class="t">
 				<thead>
 					<tr class="notice">
@@ -102,9 +119,19 @@
 
 			<div style="width: 100%; margin: 0 auto; text-align: center; padding-top: 10px;">
 				<ul class="pagination" style="margin: 0 auto; text-align: center;">
-					<c:forEach begin="1" end="${totalPage}" step="1" var="i">
-    				<li style="margin: 0 auto;"><a href="./noticeList?curPage=${i}">${i}</a></li>
+					
+					<c:if test="${pager.curBlock gt 1}">
+						<li><span id=${pager.startNum - 1} class="List">이전</span></li>
+					</c:if>
+					
+					<c:forEach begin="${pager.startNum}" end="${pager.lastNum}" step="1" var="i">
+					<li><span id="${i}" class="list">${i}</span></li>
 					</c:forEach>
+
+					<c:if test="${pager.curBlock lt pager.totalBlock}">
+						<li><span id="${pager.lastNum + 1}" class="list">다음</span></li>
+					</c:if>
+					
 				</ul>
 			</div>
 
@@ -113,8 +140,21 @@
 		
 	</section>
 	
-	<img alt="" src="../resources/images/cha2.jpg">
+
+	<script type="text/javascript">
+		var kind = '${pager.kind}';
+		if (kind == '') {
+			kind = "kT";
+			
+		}
+		$("#"+kind).prop("selected", true);
 	
+		$(".list").click(function() {
+			$("#curPage").val($(this).attr("id"));
+			$("#frm").submit();
+		});
+
+	</script>
 
 </body>
 </html>

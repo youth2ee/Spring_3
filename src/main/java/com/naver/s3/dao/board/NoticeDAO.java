@@ -12,6 +12,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.naver.s3.model.board.NoticeVO;
+import com.naver.s3.util.Pager;
+
 
 @Repository
 public class NoticeDAO {
@@ -38,9 +40,10 @@ public class NoticeDAO {
 	}
 	
 	
-	public List<NoticeVO> noticeList(Map<String, Integer> map) throws Exception {
-		return sqlSession.selectList(NAMESPACE+"noticeList", map);
+	public List<NoticeVO> noticeList(Pager pager) throws Exception {
+		return sqlSession.selectList(NAMESPACE+"noticeList", pager);
 	}
+	
 	
 	public int noticeCount() throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"noticeCount");

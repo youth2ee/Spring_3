@@ -66,17 +66,16 @@
 }
 </style>
 
-
-
 </head>
 <body>
-
 
 	<c:import url="../layout/nav.jsp" />
 	<h1>QNA List</h1>
 
-	<section style="background-color: rgb(240, 240, 240); height: auto; padding-bottom: 20px;">
+	<section
+		style="background-color: rgb(240, 240, 240); height: auto; padding-bottom: 20px;">
 		<div class="div_t">
+
 			<table class="t">
 				<thead>
 					<tr class="notice">
@@ -96,7 +95,7 @@
 					<c:forEach items="${list}" var="dto">
 						<tr class="b3">
 							<td>${dto.num}</td>
-							<td class="b4"><a class="a" href="#">${dto.title}</a></td>
+							<td class="b4"><a class="a" href="./qnaSelect?num=${dto.num}">${dto.title}</a></td>
 							<td>${dto.writer}</td>
 							<td>${dto.reg_date}</td>
 							<td>${dto.hit}</td>
@@ -104,25 +103,25 @@
 					</c:forEach>
 				</tbody>
 			</table>
-			
-		<div>
-			<ul class="pagination">
-			<c:if test="${pager.curBlock gt 1}">
-				<li><a href="./qnaList?curPage=${pager.startNum - 1}">이전</a></li>
-			</c:if>
-			
-			<c:forEach begin="${pager.startNum}" end="${pager.lastNum}" step="1" var="i"> 
-				<li><a href="./qnaList?curPage=${i}">${i}</a></li>
-			</c:forEach>
-			
-			<c:if test="${pager.curBlock lt pager.totalBlock}">
-				<li><a href="./qnaList?curPage=${pager.lastNum + 1}">다음</a></li>
-			</c:if>
-			</ul>
-		</div> 
-	
+
+			<div>
+				<ul class="pagination">
+					<c:if test="${pager.curBlock gt 1}">
+						<li><a href="./qnaList?curPage=${pager.startNum - 1}">이전</a></li>
+					</c:if>
+
+					<c:forEach begin="${pager.startNum}" end="${pager.lastNum}" step="1" var="i">
+						<li><a href="./qnaList?curPage=${i}">${i}</a></li>
+					</c:forEach>
+
+					<c:if test="${pager.curBlock lt pager.totalBlock}">
+						<li><a href="./qnaList?curPage=${pager.lastNum + 1}">다음</a></li>
+					</c:if>
+				</ul>
+			</div>
+
 		</div>
 	</section>
-	
+
 </body>
 </html>

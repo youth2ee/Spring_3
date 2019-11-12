@@ -7,6 +7,8 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.naver.s3.util.Pager;
 
@@ -17,12 +19,17 @@ public class QnaController {
 	@Inject
 	private QnaService qnaService;
 	
-	@RequestMapping("qnaList")
-	public void qnaList(Model model, Pager pager) throws Exception {
+	@RequestMapping(value = "qnaList", method = RequestMethod.GET)
+	public ModelAndView qnaList(Pager pager) throws Exception {
 		List<QnaVO> ar = qnaService.qnaList(pager);
-		model.addAttribute("list", ar);
-		model.addAttribute("pager", pager);
-
+		
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("list", ar);
+		mv.addObject("pager", pager);
+		
+		mv.setViewName("qna/qnaList");
+		
+		return mv;
 	}
 	
 

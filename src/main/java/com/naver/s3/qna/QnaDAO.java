@@ -7,7 +7,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.naver.s3.util.RowMaker;
+import com.naver.s3.util.Pager;
 
 @Repository
 public class QnaDAO {
@@ -17,8 +17,8 @@ public class QnaDAO {
 	private static final String NAMESPACE = "qnaMapper.";
 	
 	
-	public List<QnaVO> qnaList(RowMaker rowMaker) throws Exception {
-		return sqlSession.selectList(NAMESPACE+"qnaList", rowMaker);
+	public List<QnaVO> qnaList(Pager pager) throws Exception {
+		return sqlSession.selectList(NAMESPACE+"qnaList", pager);
 	}
 	
 	public int qnaCount() throws Exception {

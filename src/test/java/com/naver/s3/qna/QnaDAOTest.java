@@ -20,17 +20,14 @@ public class QnaDAOTest extends TestAbstractCase {
 	private QnaDAO qnaDAO;
 	
 
-<<<<<<< HEAD
-	//@Test
-=======
 	@Test
->>>>>>> Add_QnA_2
+
 	public void qnaList() throws Exception {
 		Pager pager = new Pager();
 		List<QnaVO> ar = qnaDAO.qnaList(pager);
 		
 		assertNotEquals(0, ar.size());
-<<<<<<< HEAD
+
 	}
 	
 	@Test
@@ -43,11 +40,9 @@ public class QnaDAOTest extends TestAbstractCase {
 			qnaDAO.qnaInsert(qnaVO);
 		}
 	
-	}
-=======
+	
+
 		
 	}
-	
->>>>>>> Add_QnA_2
-	
+
 }

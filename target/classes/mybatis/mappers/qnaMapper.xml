@@ -6,7 +6,6 @@
 <mapper namespace="qnaMapper">
 
 	<select id="qnaList" parameterType="com.naver.s3.util.Pager" resultType="com.naver.s3.qna.QnaVO">
-<<<<<<< HEAD
 	select * from
 	(select N.*, rownum R from
 	(select * from qna
@@ -49,14 +48,6 @@
 	<insert id="qnaInsert" parameterType="com.naver.s3.qna.QnaVO">
 		insert into qna values (board_seq.nextval,#{title},#{writer},#{contents}, sysdate, 0, 0, 0, 0)
 	</insert>
-=======
-		select * from (select N.*, rownum R from (select * from qna order by num desc) N)
-		where R between #{startRow} and #{lastRow}
-	</select>
 
-	<select id="qnaCount" resultType="java.lang.Integer">
-		select count(nvl(num,0)) from qna
-	</select>
->>>>>>> Add_QnA_2
 
 </mapper>

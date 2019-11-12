@@ -32,16 +32,8 @@ public class QnaController {
 		return mv;
 	}
 	
-<<<<<<< HEAD
-	@RequestMapping(value = "qnaInsert")
-	public void qnaInsert(QnaVO qnaVO) throws Exception {
-		
-		
-	}
-	
-=======
->>>>>>> Add_QnA_2
-
-
-	
 }
+
+
+
+

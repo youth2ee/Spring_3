@@ -1,12 +1,7 @@
 package com.naver.s3.util;
 
 public class Pager {
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Add_QnA_2
-	
+
 	//DB
 	private Integer curPage; //현재 페이지 번호
 	private Integer perPage; //페이지 당 글의 개수
@@ -21,16 +16,13 @@ public class Pager {
 	
 	private Integer curBlock; //현재 블럭번호
 	private Integer totalBlock; //전체 블럭 개수
-<<<<<<< HEAD
-	
+
 	
 	///// 검색하기
 	private String kind; //검색종류
 	private String search; //검색어
 
 	
-	/////
-=======
 
 	/////
 

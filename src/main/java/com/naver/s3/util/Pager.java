@@ -22,13 +22,8 @@ public class Pager {
 	private String kind; //검색종류
 	private String search; //검색어
 
-
-
-	public Pager() {
-		perPage = 10;
-	}
 	
-	
+
 	public Integer getCurPage() {
 		if(curPage == null || curPage == 0) {
 			curPage = 1;
@@ -51,7 +46,6 @@ public class Pager {
 		this.perPage = perPage;
 	}
 
-	
 	public Integer getStartRow() {
 		return startRow;
 	}
@@ -62,7 +56,6 @@ public class Pager {
 
 	public Integer getLastRow() {
 		return lastRow;
-
 	}
 
 	public String getKind() {
@@ -77,7 +70,6 @@ public class Pager {
 		if(search == null) {
 			search = "";
 		}
-		
 		return search;
 	}
 
@@ -88,7 +80,6 @@ public class Pager {
 	public void setLastRow(Integer lastRow) {
 		this.lastRow = lastRow;
 	}
-
 	
 	public Integer getStartNum() {
 		return startNum;

@@ -13,7 +13,7 @@
 	
 	<h1>Notice Write</h1>
 	
-	<form action="./noticeWrite" method="post">
+	<form action="./noticeWrite" method="post" style="width: 70%; margin: 0 auto;">
 		
 				<div class="form-group">
 					<label for="title">Title:</label> 

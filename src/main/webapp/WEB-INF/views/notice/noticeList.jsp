@@ -79,7 +79,7 @@
 			
 				<select name="kind">				
 					<option id="kT" value="kT">제목</option>
-					<option id="kW"  value="kW">작성자</option>
+					<option id="kW" value="kW">작성자</option>
 					<option id="kC" value="kC">내용</option>
 				</select>
 			

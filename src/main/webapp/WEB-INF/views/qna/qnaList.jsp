@@ -84,7 +84,7 @@
 						<option id="kT" value="kT">제목</option>
 						<option id="kW" value="kW">작성자</option>
 						<option id="kC" value="kC">내용</option>
-					</select> 
+					</select>
 					
 					<input type="text" name="search" value="${pager.search}">
 
@@ -141,9 +141,11 @@
 					
 				</ul>
 			</div>
+			
 
 		</div>
 	</section>
+	
 		<script type="text/javascript">
 		var kind = '${pager.kind}';
 		if (kind == '') {

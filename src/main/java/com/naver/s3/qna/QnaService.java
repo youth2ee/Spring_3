@@ -22,4 +22,33 @@ public class QnaService {
 		return qnaDAO.qnaList(pager);
 	}
 	
+	public QnaVO qnaSelect(int num) throws Exception {
+		return qnaDAO.qnaSelect(num);
+	}
+	
+	public int qnaWrite(QnaVO qnaVO) throws Exception {
+		return qnaDAO.qnaWrite(qnaVO);
+	}
+	
+	public int qnaDelete(int num) throws Exception {
+		return qnaDAO.qnaDelete(num);
+	}
+	
+	public int qnaUpdate(int num) throws Exception {
+		return qnaDAO.qnaUpdate(num);
+	}
+	
+	public int qnaReply(QnaVO qnaVO) throws Exception {
+		//부모의 글번호를 통해 부모VO를 호출하고 ref와 step을 수정
+		QnaVO parentVO = qnaDAO.qnaSelect(qnaVO.getNum());
+		int result = qnaDAO.qnaReplyUpdate(parentVO);
+		
+		qnaVO.setRef(parentVO.getRef());
+		qnaVO.setStep(parentVO.getStep() + 1);
+		qnaVO.setDepth(parentVO.getDepth() + 1);
+		
+		result = qnaDAO.qnaReply(qnaVO);
+		
+		return result;
+	}
 }

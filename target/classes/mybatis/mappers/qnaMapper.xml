@@ -24,9 +24,14 @@
 		</otherwise>
 	</choose>
 
-	order by num desc) N)
+	order by ref desc, step asc) N)
 	where R between #{startRow} and #{lastRow}
 	</select>
+	
+	<select id="qnaSelect" parameterType="java.lang.Integer" resultType="com.naver.s3.qna.QnaVO">
+		select * from qna where num = #{num}
+	</select>
+	
 
 	<select id="qnaCount" parameterType="com.naver.s3.util.Pager" resultType="java.lang.Integer">
 		select count(num) from qna 
@@ -45,9 +50,28 @@
 	</choose>
 	</select>	
 	
-	<insert id="qnaInsert" parameterType="com.naver.s3.qna.QnaVO">
-		insert into qna values (board_seq.nextval,#{title},#{writer},#{contents}, sysdate, 0, 0, 0, 0)
+	<insert id="qnaWrite" parameterType="com.naver.s3.qna.QnaVO">
+		insert into qna values 
+		(board_seq.nextval, #{title}, #{writer}, #{contents}, sysdate, 0, board_seq.currval, 0, 0)
 	</insert>
+	
+	<delete id="qnaDelete" parameterType="java.lang.Integer">
+		delete qna where num = #{num}
+	</delete>
 
+	<update id="qnaUpdate">
+		update qna set title=#{title}, contents=#{contents}
+		where num = #{num}
+	</update>
+	
+	<insert id="qnaReply" parameterType="com.naver.s3.qna.QnaVO">
+		insert into qna values 
+		(board_seq.nextval, #{title}, #{writer}, #{contents}, sysdate, 0, #{ref}, #{step}, #{depth})
+	</insert>
+	
+	<update id="qnaReplyUpdate" parameterType="com.naver.s3.qna.QnaVO">
+		update qna set step = step+1
+		where ref = #{ref} and step > #{step}
+	</update>
 
 </mapper>

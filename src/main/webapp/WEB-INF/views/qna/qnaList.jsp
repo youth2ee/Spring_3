@@ -112,7 +112,12 @@
 					<c:forEach items="${list}" var="dto">
 						<tr class="b3">
 							<td>${dto.num}</td>
-							<td class="b4"><a class="a" href="./qnaSelect?num=${dto.num}">${dto.title}</a></td>
+							
+							<td class="b4">
+								<c:forEach begin="1" end="${dto.depth}">-- </c:forEach>
+								<a  id="reply" class="a" href="./qnaSelect?num=${dto.num}">${dto.title}</a>
+							</td>
+							
 							<td>${dto.writer}</td>
 							<td>${dto.reg_date}</td>
 							<td>${dto.hit}</td>
@@ -142,6 +147,11 @@
 				</ul>
 			</div>
 			
+			<div>
+			
+				<a href="./qnaWrite">Write</a>
+			
+			</div>
 
 		</div>
 	</section>
@@ -158,7 +168,17 @@
 			$("#curPage").val($(this).attr("id"));
 			$("#frm").submit();
 		});
-
+		
+		var depth = '${dto.depth}';
+		
+		$("#reply").click(function() {
+			alert('${dto.depth}');
+		});
+		
+		if(depth > 0){ 
+			$("#reply").css("backgroundColor","red");			
+		}
+		
 	</script>
 
 </body>

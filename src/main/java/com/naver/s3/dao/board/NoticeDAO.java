@@ -23,32 +23,27 @@ public class NoticeDAO {
 	private static final String NAMESPACE = "noticeMapper.";
 	
 	
-	public int noticeInsert(NoticeVO noticeVO) throws Exception {
-		return sqlSession.insert(NAMESPACE+"noticeInsert", noticeVO);
+	public List<NoticeVO> noticeList(Pager pager) throws Exception {
+		return sqlSession.selectList(NAMESPACE+"noticeList", pager);
 	}
-	
-	
-	public int noticeDelete(int num) throws Exception {
-		return sqlSession.delete(NAMESPACE+"noticeDelete", num);
-	}
-	
 	
 	public NoticeVO noticeSelect(int num) throws Exception {
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		map.put("num", num);
 		return sqlSession.selectOne(NAMESPACE+"noticeSelect", map);
 	}
-	
-	
-	public List<NoticeVO> noticeList(Pager pager) throws Exception {
-		return sqlSession.selectList(NAMESPACE+"noticeList", pager);
-	}
-	
-	
+
 	public int noticeCount(Pager pager) throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"noticeCount", pager);
 	}
 	
+	public int noticeInsert(NoticeVO noticeVO) throws Exception {
+		return sqlSession.insert(NAMESPACE+"noticeInsert", noticeVO);
+	}
+	
+	public int noticeDelete(int num) throws Exception {
+		return sqlSession.delete(NAMESPACE+"noticeDelete", num);
+	}
 	
 	public int noticeUpdate(NoticeVO noticeVO) throws Exception {
 		return sqlSession.update(NAMESPACE+"noticeUpdate", noticeVO);

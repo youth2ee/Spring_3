@@ -113,15 +113,15 @@
 						<tr class="b3">
 							<td>${dto.num}</td>
 							
-							<td class="b4">
+							<td class="b4" id="reply">
 								<c:forEach begin="1" end="${dto.depth}">-- </c:forEach>
-								<a  id="reply" class="a" href="./qnaSelect?num=${dto.num}">${dto.title}</a>
+								<a class="a" href="./qnaSelect?num=${dto.num}">${dto.title}</a>
 							</td>
 							
 							<td>${dto.writer}</td>
 							<td>${dto.reg_date}</td>
 							<td>${dto.hit}</td>
-						</tr>
+						</tr>			
 					</c:forEach>
 				</tbody>
 			</table>
@@ -168,16 +168,6 @@
 			$("#curPage").val($(this).attr("id"));
 			$("#frm").submit();
 		});
-		
-		var depth = '${dto.depth}';
-		
-		$("#reply").click(function() {
-			alert('${dto.depth}');
-		});
-		
-		if(depth > 0){ 
-			$("#reply").css("backgroundColor","red");			
-		}
 		
 	</script>
 
